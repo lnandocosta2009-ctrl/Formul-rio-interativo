@@ -14,8 +14,8 @@
                 <div class="formLogin">
                     <h1>Fazer Login</h1>
                     <form>
-                        <input type="text" placeholder="E-mail">
-                        <input type="password" placeholder="Senha">
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="password" placeholder="Senha" required minlength="6">
                         <button type="submit">Entrar</button> 
                     </form>
                 </div>
@@ -29,10 +29,10 @@
                  <div class="formCadastro">
                     <h1>Cadastro</h1>
                     <form>
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="E-mail">
-                        <input type="password" placeholder="Senha">
-                        <input type="password" placeholder="Confirme Senha">
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="password" placeholder="Senha" required minlength="6">
+                        <input type="password" placeholder="Confirme Senha" required minlength="6">
                         <button type="submit">Cadastrar</button> 
                     </form>
                  </div>
