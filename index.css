@@ -4,7 +4,7 @@
 *{
     padding: 0;
     margin: 0;
-    block-size: border-box;
+    box-sizing: border-box;
 }
 
 body{
@@ -38,7 +38,8 @@ input, button{
     border: none;
     outline: none;
     font-size: 16px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     box-sizing: border-box;
 }
 
@@ -68,7 +69,8 @@ button:hover{
 
 p{
     margin-bottom: 33px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -236,4 +238,104 @@ p{
 .formCadastro{
     opacity: 0;
     transition: all .3s 0 ;
+}
+
+
+
+
+@media (max-width: 1024px){
+    .card{
+        width: 90%;
+        padding: 32px 24px;
+    }
+
+    h1{
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .containerPai{
+        height: auto;
+        min-height: 100vh;
+        padding: 24px 0;
+    }
+
+    .card{
+        width: 92%;
+        height: auto;
+        min-height: unset;
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 32px;
+    }
+
+
+    .card::after{
+        display: none;
+    }
+
+    .esquerda, .direita{
+        width: 100%;
+        height: auto;
+    }
+
+    
+    .facaLogin, .facaCadastro, .formLogin, .formCadastro{
+        position: static;
+        transform: none;
+        overflow: hidden;
+        transition: opacity .3s ease, max-height .3s ease;
+    }
+
+    .card.loginActive .facaLogin,
+    .card.loginActive .formCadastro,
+    .card.cadastroActive .facaCadastro,
+    .card.cadastroActive .formLogin{
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        margin: 0;
+    }
+
+    .card.loginActive .facaCadastro,
+    .card.loginActive .formLogin,
+    .card.cadastroActive .facaLogin,
+    .card.cadastroActive .formCadastro{
+        max-height: 600px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    input, button{
+        max-width: 100%;
+    }
+
+    p{
+        max-width: 100%;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 420px){
+    h1{
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .card{
+        padding: 28px 16px;
+        border-radius: 20px;
+    }
+
+    input, button{
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
 }
